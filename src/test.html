@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <img src="./assets/logo.png" alt="">
+        <img src="./assets/logo.png" alt="">
+        <img src="./assets/logo.png" alt="">
+        <img src="./assets/logo.png" alt="">
+    </div>
+
+    <script>
+        const getImg = (el) => {
+            return [...el.getElementsByTagName('img')].map(item => item.getAttribute('src'))
+
+        }
+
+        console.log(new Set(getImg(document.getElementById('box'))));
+
+
+    </script>
+</body>
+
+</html>
