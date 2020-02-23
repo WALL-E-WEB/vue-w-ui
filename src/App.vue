@@ -8,12 +8,21 @@
  -->
 <template>
   <div id="app">
-    <div>
-      <router-link to="/home">Go to home</router-link>
-      <router-link to="/login">login</router-link>
-      <router-link to="/dateCom">dateCom</router-link>
+    <div class="header">
+      <div class="head-l">
+        <span class="logo">logo</span>
+        <span class="logoName">name</span>
+      </div>
+      <div class="head-r">
+        <router-link to="/home">介绍</router-link>
+        <router-link to="/subgroup">组件</router-link>
+      </div>
     </div>
-    <router-view></router-view>
+    
+    <div class="main">
+      <router-view></router-view>
+    </div>
+  
   </div>
 </template>
 
@@ -26,7 +35,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
 #app {
   width: 100%;
   height: 800px;
@@ -35,6 +44,34 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: rgb(241, 240, 240);
+}
+li{
+  list-style:none;
+}
+.header {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 80px;
+  background-color: #fff;
+  .head-l,
+  .head-r{
+    display: flex;
+    align-content: center;
+    line-height: 60px;
+  }
+}
+.main{
+  margin-top: 10px;
+}
+.header a {
+  margin-right: 10px;
+  border-radius: 4px;
+  padding: 4px;
+}
+.router-link-active {
+  color: skyblue;
 }
 </style>
